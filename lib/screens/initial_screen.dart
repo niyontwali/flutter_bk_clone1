@@ -2,19 +2,16 @@ import 'package:bk_clone_1/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class InitialScreen extends StatelessWidget {
-  const InitialScreen(this.index, this.onPressed, {super.key});
-
-  final int index;
-  final Function() onPressed;
+  const InitialScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       width: double.infinity,
       height: double.infinity,
       child: Column(
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(vertical: 20),
             child: Text(
               'Choose a language',
@@ -25,7 +22,7 @@ class InitialScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
             child: Text(
               'Please select your preferred language you will be using throughout',
@@ -40,26 +37,14 @@ class InitialScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30),
+            padding: EdgeInsets.symmetric(vertical: 30),
             child: Column(
               children: [
-                CustomButton(
-                  'Kinyarwanda',
-                  onPressed,
-                  index,
-                ),
-                const SizedBox(height: 15),
-                CustomButton(
-                  'English',
-                  onPressed,
-                  index,
-                ),
-                const SizedBox(height: 15),
-                CustomButton(
-                  'Français',
-                  onPressed,
-                  index,
-                ),
+                CustomButton('Kinyarwanda'),
+                SizedBox(height: 15),
+                CustomButton('English'),
+                SizedBox(height: 15),
+                CustomButton('Français'),
               ],
             ),
           ),
