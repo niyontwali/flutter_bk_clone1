@@ -1,11 +1,19 @@
+import 'package:bk_clone_1/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton(this.buttonText, this.onPressed, this.index, {super.key});
+  const CustomButton(this.buttonText, {super.key});
 
   final String buttonText;
-  final int index;
-  final Function() onPressed;
+
+  void _onPressed(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (ctx) => const LoginScreen(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +28,9 @@ class CustomButton extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
             elevation: 2),
-        onPressed: onPressed,
+        onPressed: () {
+          _onPressed(context);
+        },
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 15,

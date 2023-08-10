@@ -1,5 +1,4 @@
 import 'package:bk_clone_1/screens/initial_screen.dart';
-import 'package:bk_clone_1/screens/login_screen.dart';
 import 'package:bk_clone_1/widgets/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,32 +30,13 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void _goBack() {
-    setState(() {
-      index = 1;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "BK Clone",
       debugShowCheckedModeBanner: false,
       home: CustomScaffold(
-        leadingWidget: index == 1
-            ? null
-            : IconButton(
-                onPressed: _goBack,
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                ),
-              ),
-        screenBody: index == 1
-            ? InitialScreen(
-                index,
-                onPressed,
-              )
-            : const LoginScreen(),
+        screenBody: InitialScreen(),
       ),
     );
   }

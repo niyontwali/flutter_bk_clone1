@@ -6,11 +6,9 @@ class CustomScaffold extends StatelessWidget {
   const CustomScaffold({
     super.key,
     required this.screenBody,
-    required this.leadingWidget,
   });
 
   final Widget screenBody;
-  final Widget? leadingWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,6 @@ class CustomScaffold extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xFF0e4193),
-        leading: leadingWidget,
         actions: [
           Container(
             margin: const EdgeInsets.symmetric(
