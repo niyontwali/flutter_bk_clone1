@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton(this.buttonText, {super.key});
 
-  final String buttonText;
+  final String buttonText:
 
   void _onPressed(BuildContext context) {
     Navigator.push(
